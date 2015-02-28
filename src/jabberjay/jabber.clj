@@ -1,8 +1,9 @@
 (ns jabberjay.jabber
   (:require [xmpp-clj :as xmpp]
             [jabberjay.script :as script]
+            [jabberjay.config :as config]
             [clojure.string :as string]
-            [carica.core :as carica]))
+            [taoensso.timbre :as timbre]))
 
 
 ; Internal API
@@ -19,7 +20,7 @@
       (or
        (if-not (string/blank? text)
          (do
-           (println "Received message: " text)
+           (timbre/info "Received message:" text)
            (script/execute (string/trim text))))
        (def-message)))
     (catch Exception e
@@ -30,7 +31,7 @@
 ; External API
 
 (defn init []
-  (let [conf (carica/config :jabber)]
+  (let [conf (config/config :jabber)]
     (xmpp/start-bot
      :username (:username conf)
      :password (:password conf)

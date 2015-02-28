@@ -1,15 +1,15 @@
 (ns jabberjay.script
-  (:require [clojure.string :as string]
+  (:require [jabberjay.config :as config]
+            [clojure.string :as string]
             [watchtower.core :as wt]
-            [me.raynes.fs :as fs]
-            [carica.core :as carica]))
+            [me.raynes.fs :as fs]))
 
 
 ; Constants & options
 
 (def ^:private SCRIPTS (atom nil))
 
-(defn- conf-wd [k] (carica/config :watchdog k))
+(defn- conf-wd [k] ((get config/config :watchdog) k))
 (defn- conf-delay [] (conf-wd :delay))
 (defn- conf-folder [] (fs/file (conf-wd :folder)))
 
