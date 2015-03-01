@@ -34,7 +34,24 @@ All parameters from this file override default config parameters.
 
 ## Development
 
+To develop Jabber command, you need to create Clojure file in the script `:folder`.
+When `:delay` parameter is defined, then FS watchdog will check changes and reload scripts in runtime.
+It could be useful in development mode, but you can switch if off in production mode (using `:delay` equals 0).
+
 TODO
+
+
+### Example
+
+This simple command always returns "Hello!", when client sends "Hi" ("HI", "hi", "hI"):
+
+```clojure
+(ns hi)
+
+(defn init
+  "Simple module for greating"
+  [msg] "Hello!")
+```
 
 
 ## Building from source

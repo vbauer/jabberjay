@@ -52,11 +52,13 @@
 
 (defn init []
   (reload-scripts)
-  (wt/watcher
-   [(conf-folder)]
-   (wt/rate (conf-delay))
-   (wt/file-filter (wt/extensions :clj))
-   (wt/on-change fs-watcher)))
+  (let [d (conf-folder)]
+    (if (and (not (nil? d)) (d > 0))
+      (wt/watcher
+       [d]
+       (wt/rate (conf-delay))
+       (wt/file-filter (wt/extensions :clj))
+       (wt/on-change fs-watcher)))))
 
 ;(init)
 ;(reload-scripts)
