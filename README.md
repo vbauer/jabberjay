@@ -1,4 +1,4 @@
-# Jabberjay
+# Jabberjay [![Build Status](https://travis-ci.org/vbauer/jabberjay.svg)](https://travis-ci.org/vbauer/jabberjay) [![Dependencies Status](http://jarkeeper.com/vbauer/jabberjay/status.png)](http://jarkeeper.com/vbauer/jabberjay)
 
 <img src="misc/jabberjay.png" width="300" height="300" align="right" style="margin-left: 15px" />
 
@@ -38,7 +38,12 @@ To develop Jabber command, you need to create Clojure file in the script `:folde
 When `:delay` parameter is defined, then FS watchdog will check changes and reload scripts in runtime.
 It could be useful in development mode, but you can switch if off in production mode (using `:delay` equals 0).
 
-TODO
+It is necessary to follow several rules during Jabber command development:
+
+* Each command should be implemented in separate file with namespace.
+* Command name is the file name (ignoring case).
+* It is possible to use all artifacts from Jabberjay's classpath.
+* Last function in script file is the entry point.
 
 
 ### Example

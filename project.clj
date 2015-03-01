@@ -1,5 +1,5 @@
 (defproject jabberjay "0.1.0-SNAPSHOT"
-  :description "JabberJay Bot"
+  :description "Jabberjay - simple framework for creating Jabber bots"
   :url "https://github.com/vbauer/jabberjay"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
