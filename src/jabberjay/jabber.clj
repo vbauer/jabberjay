@@ -21,7 +21,7 @@
        (if-not (string/blank? text)
          (do
            (timbre/info "Received message:" text)
-           (script/execute (string/trim text))))
+           (str (script/execute (string/trim text)))))
        (def-message)))
     (catch Exception e
       (.printStackTrace e)

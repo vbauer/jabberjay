@@ -40,10 +40,11 @@ It could be useful in development mode, but you can switch if off in production 
 
 It is necessary to follow several rules during Jabber command development:
 
-* Each command should be implemented in separate file with namespace.
+* Each command should be implemented in separate script file (with the same namespace).
 * Command name is the file name (ignoring case).
 * It is possible to use all artifacts from Jabberjay's classpath.
-* Last function in script file is the entry point.
+* Last function in the script file is the entry point.
+* Result of the last function is the answer message, it will be sent to user.
 
 
 ### Example
@@ -57,6 +58,8 @@ This simple command always returns "Hello!", when client sends "Hi" ("HI", "hi",
   "Simple module for greating"
   [msg] "Hello!")
 ```
+
+Another example: [scripts/weather.clj](scripts/weather.clj).
 
 
 ## Building from source
