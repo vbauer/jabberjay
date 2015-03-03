@@ -62,11 +62,17 @@ This simple command always returns "Hello!", when client sends "Hi" ("HI", "hi",
 Another example: [scripts/weather.clj](scripts/weather.clj).
 
 
-## Building from source
+## Usage
 
 To build executable JAR from sources:
 ```bash
 lein do clean, uberjar
+```
+
+To grab a JAR from [latest release](https://github.com/vbauer/jabberjay/releases/latest):
+
+```bash
+curl -L -O https://github.com/vbauer/jabberjay/releases/download/0.1.0/jabberjay.jar
 ```
 
 To run the bot, simply do:
