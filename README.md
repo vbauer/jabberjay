@@ -4,7 +4,7 @@
 
 > Jabberjays are a type of muttation that consist of all male birds that were created in the Capitol labs to spy on enemies and rebels of the Capitol. Jabberjays had the ability to memorize and repeat entire human conversations, and were used as spies, to gather words and information. - The Hunger Games
 
-**Jabberjay** is a Clojure micro-framework for creating Jabber bots.
+**Jabberjay** is a Clojure micro-framework for creating [Jabber](http://www.jabber.org/faq.html#jabber) bots.
 
 Programming your own Jabber bot can be helpful and fun.
 You can use your Jabber bot to provide information about some running systems or to make your services interact with users.
