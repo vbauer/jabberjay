@@ -11,21 +11,21 @@
 (defn- def-message []
   (str
    "Type the name of the specific module, ex: \"hi\"\n"
-   "Available modules: " (string/join ", " (script/modules)) "\n"))
+   "Available modules: " (string/join ", " (script/modules))))
 
 
 (defn- process-message [msg]
-  (try
-    (when-let [text (:body msg)]
-      (or
-       (if-not (string/blank? text)
-         (do
-           (timbre/info "Received message:" text)
-           (str (script/execute (string/trim text)))))
-       (def-message)))
-    (catch Exception e
-      (.printStackTrace e)
-      (def-message))))
+  (or
+    (try
+      (when-let [text (:body msg)]
+        (if-not (string/blank? text)
+          (do
+            (timbre/info "Received message:" text)
+            (script/execute (string/trim text)))))
+      (catch Exception e
+        (timbre/error e)
+        (.getMessage e)))
+   (def-message)))
 
 
 ; External API
