@@ -18,8 +18,7 @@
 
 (defn- scan-scripts []
   (let [dir (conf-folder)
-        fnames (fs/list-dir dir)
-        files (map #(fs/file dir %) fnames)]
+        files (fs/list-dir dir)]
     (filter #(fs/file? %) files)))
 
 (defn- reload-script [file]
@@ -52,11 +51,15 @@
 
 (defn init []
   (reload-scripts)
-  (let [d (conf-folder)]
-    (if (and (not (nil? d)) (d > 0))
+  (let [f (conf-folder)
+        d (conf-delay)]
+    (if (and
+         (not (nil? f))
+         (not (nil? d))
+         (> d 0))
       (wt/watcher
-       [d]
-       (wt/rate (conf-delay))
+       [f]
+       (wt/rate d)
        (wt/file-filter (wt/extensions :clj))
        (wt/on-change fs-watcher)))))
 

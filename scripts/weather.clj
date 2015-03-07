@@ -44,7 +44,7 @@
        (str "Low: " (:low %))])
     data)))
 
-(defn error [msg]
+(defn- error [msg]
   (str msg "\n Do not forget to specify city name, ex: \"weather Novosibirsk\""))
 
 ; External API
