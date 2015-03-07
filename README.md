@@ -72,7 +72,7 @@ lein do clean, uberjar
 To grab a JAR from [latest release](https://github.com/vbauer/jabberjay/releases/latest):
 
 ```bash
-curl -L -O https://github.com/vbauer/jabberjay/releases/download/0.1.0/jabberjay.jar
+curl -L -O https://github.com/vbauer/jabberjay/releases/download/0.1.1/jabberjay.jar
 ```
 
 To run the bot, simply do:
