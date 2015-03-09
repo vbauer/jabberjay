@@ -18,8 +18,8 @@ Default configuration is stored in project resources (config.edn) in [EDN format
           :password "Fill me up!"
           :host "Fill me up!"
           :domain "Fill me up!"}
- :watchdog {:folder "scripts"
-            :delay 1000}}
+ :scripts {:folder "scripts"
+           :watchdog 1000}}
 ```
 
 Before using, it is necessary to configure the following parameters:
@@ -35,8 +35,8 @@ All parameters from this file override default config parameters.
 ## Development
 
 To develop Jabber command, you need to create Clojure file in the script `:folder`.
-When `:delay` parameter is defined, then FS watchdog will check changes and reload scripts in runtime.
-It could be useful in development mode, but you can switch if off in production mode (using `:delay` equals 0).
+When `:watchdog` parameter is defined, then FS watchdog will check changes and reload scripts in runtime echo *N* milliseconds.
+It could be useful in development mode, but you can switch if off in production mode (using `:watchdog` equals 0).
 
 It is necessary to follow several rules during Jabber command development:
 
@@ -47,16 +47,36 @@ It is necessary to follow several rules during Jabber command development:
 * Result of the last function is the answer message, it will be sent to user.
 
 
+### Script context
+
+Each script receives context parameters, for example:
+
+```clojure
+{:subject nil
+ :from "bauer.vlad@gmail.com/gmail.3167A379"
+ :to "jabberjay@gmail.com"
+ :thread nil
+ :error nil
+ :packet-id "5A19D18217BBD43_1"
+ :type :chat
+ :from-name "bauer.vlad@gmail.com"
+ :body "Hi Bot"
+ :text "Bot"}
+```
+
+
 ### Example
 
-This simple command always returns "Hello!", when client sends "Hi" ("HI", "hi", "hI"):
+This simple command always returns "Hello, <your jabber account>", when client sends "Hi" ("HI", "hi", "hI"):
 
 ```clojure
 (ns hi)
 
 (defn init
   "Simple module for greating"
-  [msg] "Hello!")
+  [data]
+  (str "Hello, " (or (:from-name data)
+                     (:from data))))
 ```
 
 Another example: [scripts/weather.clj](scripts/weather.clj).

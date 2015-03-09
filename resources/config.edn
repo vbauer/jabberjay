@@ -3,5 +3,5 @@
           :password "Fill me up!"
           :host "Fill me up!"
           :domain "Fill me up!"}
- :watchdog {:folder "scripts"
-            :delay 1000}}
+ :scripts {:folder "scripts"
+           :watchdog 1000}}

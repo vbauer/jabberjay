@@ -10,9 +10,9 @@
 
 (def ^:private SCRIPTS (atom nil))
 
-(defn- conf-wd [k] ((get config/config :watchdog) k))
-(defn- conf-delay [] (conf-wd :delay))
-(defn- conf-folder [] (fs/file (conf-wd :folder)))
+(defn- conf-scripts [k] ((get config/config :scripts) k))
+(defn- conf-delay [] (conf-scripts :watchdog))
+(defn- conf-folder [] (fs/file (conf-scripts :folder)))
 
 
 ; Internal API: Script engine
