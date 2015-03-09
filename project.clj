@@ -9,6 +9,7 @@
                  [uochan/watchtower "0.1.4"]
                  [me.raynes/fs "1.4.6"]
                  [xmpp-clj "0.3.1"]
+                 [jivesoftware/smackx "3.1.0"]
                  [clj-http "1.0.1"]
                  [com.taoensso/timbre "3.4.0"]
                  [sonian/carica "1.1.0" :exclusions [cheshire]]]

@@ -49,9 +49,10 @@
 
 ; External API
 
-(defn init [location]
+(defn init [data]
   (try
-    (let [json (fetch-weather location)
+    (let [location (:text data)
+          json (fetch-weather location)
           data (get-in json [:query :results :channel :item :forecast])]
       (report data))
     (catch Exception e

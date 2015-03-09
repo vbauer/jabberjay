@@ -5,7 +5,7 @@
 
 
 (defn -main [& args]
-  (script/init)
+  (script/init true)
   (jabber/init))
 
 ;(-main)

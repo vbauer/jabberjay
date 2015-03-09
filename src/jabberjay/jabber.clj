@@ -17,11 +17,11 @@
 (defn- process-message [msg]
   (or
     (try
-      (when-let [text (:body msg)]
+      (when-let [text (string/trim (:body msg))]
         (if-not (string/blank? text)
           (do
-            (timbre/info "Received message:" text)
-            (script/execute (string/trim text)))))
+            (timbre/debug "Received message:" msg)
+            (script/execute msg))))
       (catch Exception e
         (timbre/error e)
         (.getMessage e)))
