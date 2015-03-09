@@ -35,7 +35,7 @@ All parameters from this file override default config parameters.
 ## Development
 
 To develop Jabber command, you need to create Clojure file in the script `:folder`.
-When `:watchdog` parameter is defined, then FS watchdog will check changes and reload scripts in runtime echo *N* milliseconds.
+When `:watchdog` parameter is defined, then FS watchdog will check changes and reload scripts in runtime each *N* milliseconds.
 It could be useful in development mode, but you can switch if off in production mode (using `:watchdog` equals 0).
 
 It is necessary to follow several rules during Jabber command development:
@@ -92,7 +92,7 @@ lein do clean, uberjar
 To grab a JAR from [latest release](https://github.com/vbauer/jabberjay/releases/latest):
 
 ```bash
-curl -L -O https://github.com/vbauer/jabberjay/releases/download/0.1.1/jabberjay.jar
+curl -L -O https://github.com/vbauer/jabberjay/releases/download/0.2.0/jabberjay.jar
 ```
 
 To run the bot, simply do:
