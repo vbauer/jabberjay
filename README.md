@@ -67,7 +67,7 @@ Each script receives context parameters, for example:
 
 ### Example
 
-This simple command always returns "Hello, <your jabber account>", when client sends "Hi" ("HI", "hi", "hI"):
+This simple command always returns "Hello, `your jabber account`", when client sends "Hi" ("HI", "hi", "hI"):
 
 ```clojure
 (ns hi)
