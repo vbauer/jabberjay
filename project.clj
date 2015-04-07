@@ -14,11 +14,6 @@
                  [com.taoensso/timbre "3.4.0"]
                  [sonian/carica "1.1.0" :exclusions [cheshire]]]
 
-  :plugins [[jonase/eastwood "0.2.1" :exclusions [org.clojure/clojure]]
-            [lein-kibit "0.0.8" :exclusions [org.clojure/clojure]]
-            [lein-bikeshed "0.2.0" :exclusions [org.clojure/clojure]]
-            [lein-ancient "0.6.5"]]
-
   :min-lein-version "2.0.0"
   :global-vars {*warn-on-reflection* false}
   :uberjar-name "jabberjay.jar"
