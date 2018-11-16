@@ -1,4 +1,4 @@
-# Jabberjay [![Build Status](https://travis-ci.org/vbauer/jabberjay.svg)](https://travis-ci.org/vbauer/jabberjay) [![Dependencies Status](http://jarkeeper.com/vbauer/jabberjay/status.png)](http://jarkeeper.com/vbauer/jabberjay)
+# Jabberjay [![Build Status](https://travis-ci.org/vbauer/jabberjay.svg)](https://travis-ci.org/vbauer/jabberjay)
 
 <img src="misc/jabberjay.png" width="300" height="300" align="right" style="margin-left: 15px" />
 
