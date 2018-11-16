@@ -1,9 +1,6 @@
 language: clojure
-lein: lein2
-script: lein2 do test, clean, uberjar
+script: lein do test, clean, uberjar
 jdk:
-  - openjdk6
-  - openjdk7
-  - oraclejdk7
   - oraclejdk8
+  - openjdk11
 sudo: false
